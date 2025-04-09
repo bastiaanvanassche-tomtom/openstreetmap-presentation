@@ -1,40 +1,334 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/league.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>Slide 1</section>
+			<section>
+				<section>OpenStreetMap History
+					<img class="r-stretch" src="img/history/ferraris.png" />
+				</section>
+				<section>
+					<h3>Founded: 2004</h3>
+					<p>by Steve Coast in the UK</p>
+					<img src="img/history/Steve_Coast.jpg" />
+				</section>
+				<section>
+					<h3>Milestones: 2006</h3>
+					<p class="fragment">OpenStreetMap Foundation was registered in the UK</p>
+				</section>
+				<section>
+					<h3>Milestones: 2007</h3>
+					<p>First international conference “State Of The Map” was held in Manchester</p>
+					<img class="r-stretch" src="img/history/Stateofthemap.png" />
+					<aside class="notes">
+						<ul>
+							<li>annual</li>
+							<li>hosted by the OpenStreetMap Foundation</li>
+							<li>2024 edition was in Nairobi, Kenia</li>
+							<li>2025 edition will be in Manilla, Philippines</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Milestones: 2008</h3>
+					<p>20 million ways and 200 million nodes</p>
+					<img class="r-stretch" src="img/history/node-count.png" />
+					<aside class="notes">
+						Stats: 2025-04-08
+						<ul>
+							<li>nodes: 9 837 243 484</li>
+							<li>ways: 1 096 667 017</li>
+							<li>relations: 13 216 182</li>
+							<li>registered users: 10 073 461</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Milestones: 2010</h3>
+					<p>Use Bing aerial imagery (Microsoft) to make OSM changes</p>
+					<img class="r-stretch" src="img/history/bing.svg" />
+					<aside class="notes">
+						In November 2010 it was announced that Bing has granted the right to trace from their
+						aerial imagery for the purpose of contributing content to OpenStreetMap.
+					</aside>
+				</section>
+				<section>
+					<h3>Milestones: 2012</h3>
+					<ul>
+						<li>1 million registered users</li>
+						<li>Switch from Creative Commons License to Open Database License (ODbL)</li>
+					</ul>
+					<img class="r-stretch" src="img/history/odbl.png" />
+					<aside class="notes">
+						Reason: CC license is made for protecting documents and pictures, not data
+					</aside>
+				</section>
+				<section>
+					<h3>Milestones: 2023</h3>
+					<p>Over 10 million registered users</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>OSM Data Model</h3>
+					<p>3 element types</p>
+					<ul>
+						<li><b>nodes</b>: points in space</li>
+						<li><b>ways</b>: linear and area features</li>
+						<li><b>relations</b>: relationships between nodes and/or ways</li>
+					</ul>
+					<p>properties: a unique Id, a list of key-value Tags, a Version, Timestamp,
+						User Id, and Changeset Id.</p>
+				</section>
+				<section>
+					<h3>OSM Data Model: nodes</h3>
+					<ul>
+						<li>Single points in space defined by their <b>latitude</b>, <b>longitude</b> and <b>node
+								id</b>.
+						</li>
+						<li>
+							Used for points of interest and other point-shaped objects like shops, individual trees or
+							traffic lights.
+						</li>
+						<li>example: <a href="https://www.openstreetmap.org/node/8558456772">charging station</a></li>
+					</ul>
+					<p> <img width=300 height=300 class="r-stretch" src="img/model/node.png" />
+					</p>
+				</section>
+				<section>
+					<h3>OSM Data Model: ways</h3>
+					<ul>
+						<li>Ordered list of nodes</b>
+						</li>
+						<li>
+							Used for linear-shaped objects like <b>roads</b> and <b>smaller rivers</b>.
+						</li>
+						<li>example: <a href="https://www.openstreetmap.org/way/24268405">residential road</a></li>
+					</ul>
+					<p>
+						<img width=200 height=200 class="r-stretch" src="img/model/way.png" />
+					</p>
+				</section>
+				<section>
+					<h3>OSM Data Model: areas</h3>
+					<ul>
+						<li>
+							Ways are also used for polygon-shaped objects like <b>buildings</b> and <b>landuse areas</b>
+							when the way is closed.
+						</li>
+						<li>example: <a href="https://www.openstreetmap.org/way/626014207">Hogent Campus Mercator,
+								Gebouw J</a></li>
+					</ul>
+					<p>
+						<img width=200 height=200 class="r-stretch" src="img/model/area.png" />
+					</p>
+				</section>
+				<section>
+					<h3>OSM Data Model: closed ways</h3>
+					<ul>
+						<li>
+							Note that closed ways occasionally represent loops, such as roundabouts on highways or
+							barrier-like structures, rather than solid areas
+						</li>
+						<li>example: <a href="https://www.openstreetmap.org/way/654593610">fence</a></li>
+					</ul>
+					<p>
+						<img width=200 height=200 class="r-stretch" src="img/model/closed-way.png" />
+					</p>
+				</section>
+				<section>
+					<h3>OSM Data Model: relation</h3>
+					<ul>
+						<li>
+							Describes a relationship between two or more data elements: nodes, ways or other relations:
+						</li>
+						<li>Used for “everything else”, i. e. more complex geometric objects like multipolygons and turn
+							restrictions.</li>
+						<li>example: <a href="https://www.openstreetmap.org/relation/15065954">Only Right Turn
+								Restriction</a></li>
+					</ul>
+					<p>
+						<img width=200 height=200 class="r-stretch" src="img/model/relation.svg" />
+					</p>
+				</section>
+				<section>
+					<h3>OSM Data Model: tags</h3>
+					<ul>
+						<li>
+							Add an explicit meaning to a particular element
+						</li>
+						<li>Any OSM element: #tags >= 0, no upper limit
+						</li>
+						<li><b>Top-level</b>/<b>primary</b>/<b>feature</b> tags vs <b>additional</b>/<b>secondary</b>
+							tags: <a href="https://wiki.openstreetmap.org/wiki/Map_features">Map Features</a></li>
+					</ul>
+					<p>
+						<img width=200 height=200 class="r-stretch" src="img/model/tag.png" />
+					</p>
+					<aside class="notes">Top-level, primary or feature tags are those that define the nature of map
+						features and
+						therefore may be the sole tags that exist on a map element. All other tags are additional
+						properties describing map features and can be considered additional or secondary tags. </aside>
+				</section>
+				<section>
+					<h3>OSM model vs GIS “Simple Features” data model</h3>
+					<ul>
+						<li>
+							Most Geographic Information Systems (GIS) operate on a <b>different</b> data model than
+							OSM</li>
+						<li>OSM data is frequently used in these systems (e.g. QGIS): crucial to convert between the
+							models.
+						</li>
+						<li>Zero-, one-, and two-dimensional objects:
+							<ul>
+								<li>Point</li>
+								<li>LineString</li>
+								<li>Polygon</li>
+							</ul>
+						</li>
+						<li>see <a href="https://en.wikipedia.org/wiki/Simple_Features">Simple Features standard</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>OSM Data Model: some stats</h3>
+					<p>Date: 2025-04-08</p>
+					<ul>
+						<li>nodes: 9 837 243 484</li>
+						<li>ways: 1 096 667 017</li>
+						<li>relations: 13 216 182</li>
+					</ul>
+					<p><a href="https://planet.openstreetmap.org/statistics/data_stats.html">More Stats...</a></p>
+				</section>
+				<section>
+					<h3>Issues with the OSM data model</h3>
+					<ul>
+						<li>Varying level of detail</li>
+						<li>ID stability</li>
+						<li>Building a navigation graph</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section>
+					<h3>OSM specifications</h3>
+					<ul>
+						<li>OSM has a completely <a href="https://wiki.openstreetmap.org/wiki/Any_tags_you_like">free
+								data model</a> (you don't need anyone's permission)</li>
+						<li>But: the community tries to moderate the list of <a
+								href="https://wiki.openstreetmap.org/wiki/Map_features">primary map features</a></li>
+						<ul>
+							<li>It serves as a landing page for newbies</li>
+							<li>Avoid duplicates</li>
+							<li>Prevent uncontrolled explosion of tags</li>
+						</ul>
+						<li><a href="https://wiki.openstreetmap.org/wiki/Proposal_process">Official Proposal Process</a>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Mapmaking: Map Editing software</h3>
+					<ul>
+						<li><a href="https://wiki.openstreetmap.org/wiki/ID">iD</a>: the default map editor on
+							openstreetmap.org</li>
+						<li><a href="https://rapideditor.org/">Rapid</a>: an extended version of iD (fork), created and
+							maintained by Meta, focusing on
+							improving speed and efficiency while map editing: e.g. there’s functionality to add missing
+							roads that were generated using AI.</li>
+						<li><a href="https://josm.openstreetmap.de/">JOSM</a>: Java-based non-web based, advanced
+							features, not present in iD</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Mapmaking: Other notable software</h3>
+					<ul>
+						<li><a href="https://maproulette.org/">MapRoulette</a>: microtask platform, tasks are group in
+							challenges</li>
+						<li><a href="https://osmcha.org/">OSMCha</a>: OSM Changeset analyzer</li>
+						<li><a href="https://overpass-turbo.eu/">Overpass Turbo</a>: query and show OSM data on an
+							interactive map</li>
+						<li><a href="https://taginfo.openstreetmap.org/">Taginfo</a>: collects information about tags
+							from several sources to help you understand what
+							they mean and how they are used.</li>
+						<li><a href="https://dashboard.ohsome.org/">Ohsome</a>: easy access to OSM history</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Mapmaking: OSM data extracts</h3>
+					<ul>
+						<li><a href="https://maproulette.org/">Planet files</a>:weekly “planet” files are made
+							available, these are full dumps of the OSM database. </li>
+						<li>different formats: <code>xml</code> and <code>pbf</code>
+							<ul>
+								<li>xml: human readable</li>
+								<li>pbf: custom binary format, based upon Google’s Protocol Buffer binary encoding
+									format</li>
+								<li>pbf is highly compressed, the weekly dump file is about <code>80G</code> in size (as
+									opposed to
+									<code>149G</code> for <code>bz2</code> compressed XML)
+								</li>
+								<li>There are special <b>tools</b> available to export data from a pbf file</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Mapmaking: OSM data extracts</h3>
+					<p>Regional extracts: <a href="https://download.geofabrik.de/">Geofabrik Download Server</a></p>
+				</section>
+				<section>
+					<h3>Mapmaking: OSM data extracts</h3>
+					<p>Changesets: <a
+							href="https://wiki.openstreetmap.org/wiki/OSM_file_formats#File_formats_for_diffs/">Change
+							file formats</a></p>
+					<ul>
+						<li>Multiple formats to describe the differences between 2 datasets (e.g. 2 planet pbfs), most
+							common is the osmChange format, it’s a human readable (xml) </li>
+						<li>These osmChange files (extension <code>.osc</code>) are published regularly (minutely,
+							hourly, daily)
+						</li>
+						<li>Tooling is available to “apply” the changesets on top of an existing pbf, in order to obtain
+							a new pbf</li>
+					</ul>
+				</section>
+
+			</section>
+
+
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
 </html>

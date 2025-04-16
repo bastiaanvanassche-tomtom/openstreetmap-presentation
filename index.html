@@ -23,8 +23,8 @@
 				<h3>Overview</h3>
 				<ul>
 					<li>OpenStreetMap</li>
-					<li>TomTom's Orbis Maps</li>
 					<li>Overture Maps</li>
+					<li>TomTom's Orbis Maps</li>
 				</ul>
 			</section>
 			<section>
@@ -570,12 +570,73 @@
 				<img class="r-stretch" src="img/overture/logo.svg" />
 			</section>
 			<section>
-				<h3></h3>
+				<h3>What is <a href="https://overturemaps.org/">Overture?</a></h3>
 				<ul>
+					<li>Founded in 2022 by Amazon, Meta, Microsoft and TomTom as collaborative map building project</li>
 					<li>
-						Founded in 2022 by Amazon, Meta, Microsoft and TomTom
+						To be complementary to OSM, not to replace it
+					</li>
+					<li>Makes use of OSM data, but also other datesets</li>
+					<li>Developer focused:
+						<ul>
+							<li>
+								Standardized, well structured and documented schema
+							</li>
+							<li>
+								Extensive validation (QA)
+							</li>
+							<li>
+								Easy to integrate and merge different datasets (conflation) using GERS
+							</li>
+						</ul>
 					</li>
 				</ul>
+				<aside class="notes">
+					<p>Global Entity Reference system:
+						two datasets that refer to the same real-word entity should do that through the same identifiers
+						(ids). This makes it easy to merge and combine these different datasets.
+					</p>
+				</aside>
+			</section>
+			<section>
+				<section>
+					<h3>Overture Foundation (1)</h3>
+					<ul>
+						<li>Steering, General and Contributor members have different <a
+								href="https://overturemaps.org/become-a-member/">rights</a></li>
+						<li>Under the umbrella of the <a href="https://www.linuxfoundation.org/">Linux Foundation</a>
+						</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Steering, General and Contributor + non-profits</li>
+							<li>annual fee</li>
+							<li>contributing headcount</li>
+							<li>steering committee seat</li>
+							<li>influence priorities</li>
+							<li>chairmanship of working groups and projects</li>
+							<li>Linux foundation: non-profit org, founded in 2000 to support development of the Linux
+								operating system and other open source software projects</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Overture Foundation (2)</h3>
+					<ul>
+						<li>Wide range of <a href="https://overturemaps.org/about/members/">companies</a> is represented
+							in the foundation:
+							<ul>
+								<li>TomTom: (car) navigation</li>
+								<li>Niantic: gaming (Pokemon Go)</li>
+								<li>Uber: ride-hailing, food delivery</li>
+								<li>Addresscloud: geographic risk assessment for ensurance companies</li>
+								<li>Maxar: geospatial insights through satellite imagery</li>
+								<li>...</li>
+							</ul>
+						</li>
+					</ul>
+
+				</section>
 			</section>
 			<section>
 				<h3>
@@ -589,7 +650,7 @@
 						Base
 					</li>
 					<li>
-						Buildings
+						<b>Buildings</b>
 					</li>
 					<li>
 						Divisions
@@ -598,21 +659,113 @@
 						Places
 					</li>
 					<li>
-						Transportation
+						<b>Transportation</b>
 					</li>
 				</ul>
 				<aside class="notes">
 					<ul>
 						<li>Address Points</li>
-						<li>Base: land cover, land use, water (seas, oceans, rivers), infrastructure (comm lines, piers, bridges)</li>
+						<li>Base: land cover, land use, water (seas, oceans, rivers), infrastructure (comm lines,
+							piers,
+							bridges)</li>
 						<li>Building footprints</li>
 						<li>Places: Points of Interest</li>
 						<li>Administrative subdivisions: countries, regions, states, cities, etc.</li>
 						<li>Transportation: transportation network like roads, railways and ferries</li>
 					</ul>
 				</aside>
-
 			</section>
+			<section>
+				<h3>Overture Map Explorer</h3>
+				<a href="https://explore.overturemaps.org/"><img height="400" src="img/overture/explorer.png"></a>
+			</section>
+			<section>
+				<h3>Theme: Buildings</h3>
+				<p>Buildings theme prioritizes community contributed data first and then "fills in" the rest of the map
+					with the best ML data available.</p>
+				<a href="https://docs.overturemaps.org/guides/buildings/"><img height="400" class="r-stretch"
+						src="img/overture/themes/buildings/overview.png"></a>
+			</section>
+			<section>
+				<section>
+					<h3>Theme: Transportation Network (1)</h3>
+					<ul>
+						<li>OSM transportation network as a base: roads, ferries and railways</li>
+						<li>enriched with road geometry coming from TomTom (55k kms currently but much more to come)
+						</li>
+					</ul>
+					</ul>
+					<aside class="notes">
+					</aside>
+				</section>
+				<section>
+					<h3>Theme: Transportation Network (2)</h3>
+					<p>sectioned and merged differently (as opposed to the original OSM data) with the goal of:
+					</p>
+					<ul>
+						<li>making sure that the sectioning is consistent (according to predefined rules)</li>
+						<li>id stability of the transportation network elements is predictable and according to a
+							predefined set of rules</li>
+						<li><a
+								href="https://www.tomtom.com/newsroom/behind-the-map/how-tomtom-makes-overture-transportation-layer/">blog
+								post</a></li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>e.g. in OSM an id of a way is reused when a way is split in 2</li>
+							<li>e.g. in OSM when attribution (speed limit) is added to a way, it possible that the way
+								gets split and new ids are assigned, although the composing parts of the way still
+								represent the same road in reality</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Theme: Transportation Network (3)</h3>
+					<p>sectioning the roads based on attribute changes creates an unstable map: due to a max speed
+						change the road with #4 is split into roads #5 and #6</p>
+					<img height="400" class="r-stretch" src="img/overture/themes/transportation/lr1.png">
+				</section>
+				<section>
+					<h3>Theme: Transportation Network (4)</h3>
+					<p>The introduction of a max speed change does not lead to ID churn. The technique to "map" certain
+						attributes to subsections of a certain road is called Linear Referencing (LR).</p>
+					<img height="400" class="r-stretch" src="img/overture/themes/transportation/lr2.png">
+				</section>
+				<section>
+					<h3>Theme: Transportation Network (5)</h3>
+					<p>Why is ID stability and consistent sectioning so important?</p>
+					<ul>
+						<li>Developer focus: with a more stable Transportation Network, your "own" dataset that refers
+							to the transportation elements can be re-applied more easily, when the Transportation
+							Network evolves over time.</li>
+						<li>The process of merging different map datasets (e.g. Transportation Network + Speed
+							Restrictions) is called <a href="https://wiki.openstreetmap.org/wiki/Conflation">map
+								conflation</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>How to use the Overture data?</h3>
+					<ul>
+						<li>Data is <a href="https://overturemaps.org/download/">released</a> on a monthly basis</li>
+						<li>Data can be downloaded from cloud storage, AWS or Microsoft Azure</li>
+						<li>Format: GeoParquet</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section></section>
+				<h3>Orbis Maps</h3>
+				<img class="r-stretch" src="img/openstreetmap/openstreetmap_logo.png" />
+				<section>
+					<ul>
+						<li>The Overture Transportation Network maps 1-1 to the Transportation Network layer that is
+							used in the TomTom Orbis maps product</li>
+					</ul>
+
+				</section>
+			</section>
+
 		</div>
 	</div>
 
@@ -632,7 +785,7 @@
 			parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
 
 			// Parallax background size
-			parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+			parallaxBackgroundSize: '2100px 1300px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 
 			// Number of pixels to move the parallax background per slide
 			// - Calculated automatically unless specified

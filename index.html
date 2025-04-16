@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/league.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -18,22 +18,43 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section>Slide 1</section>
+			<section>
+				<h3>OpenStreetMap, Overture and Orbis</h3>
+				<p>Bastiaan Van Assche</p>
+				<p>TomTom</p>
+			</section>
+			<section>
+				<h3>All about me</h3>
+				<ul>
+					<li>Working for TomTom since 2006</li>
+					<li><b>Software engineer</b>, maintaining the transportation network data of our map: roads, ferries
+						and
+						railways</li>
+					<li>Working with <b>OSM</b> data on daily basis</li>
+					<li>Contributing to <b>Overture</b> maps</li>
+					<li>Studied:
+						<ul>
+							<li>Industrieel Ingenieur Elektronica/ICT</li>
+							<li>Master Geografie, optie Landmeetkunde</li>
+						</ul>
+					</li>
+					<li>
+						Hobbies: wind and water sports, skiing
+					</li>
+				</ul>
+			</section>
 			<section>
 				<h3>Overview</h3>
 				<ul>
-					<li>OpenStreetMap</li>
+					<li><b>OpenStreetMap</b></li>
 					<li>Overture Maps</li>
 					<li>TomTom's Orbis Maps</li>
 				</ul>
 			</section>
 			<section>
-				<h3>OpenStreetMap</h3>
-				<img class="r-stretch" src="img/openstreetmap/openstreetmap_logo.png" />
-			</section>
-			<section>
-				<section>OpenStreetMap History
-					<img class="r-stretch" src="img/openstreetmap/history/ferraris.png" />
+				<section>
+					<h3>OpenStreetMap History</h3>
+					<img height="400"   class="r-stretch" src="img/openstreetmap/Openstreetmap_logo.png" />
 				</section>
 				<section>
 					<h3>Founded: 2004</h3>
@@ -50,7 +71,7 @@
 							</ul>
 						</li>
 					</ul>
-					<img src="img/openstreetmap/history/Steve_Coast.jpg" />
+					<img height="200"src="img/openstreetmap/history/Steve_Coast.jpg" />
 				</section>
 				<section>
 					<h3>Founded: 2004</h3>
@@ -130,7 +151,7 @@
 				<section>
 					<h3>Milestones: 2010</h3>
 					<p>Use Bing aerial imagery (Microsoft) to make OSM changes</p>
-					<img class="r-stretch" src="img/openstreetmap/history/bing.svg" />
+					<img class="r-stretch" src="img/openstreetmap/history/Bing.svg" />
 					<aside class="notes">
 						In November 2010 it was announced that Bing has granted the right to trace from their
 						aerial imagery for the purpose of contributing content to OpenStreetMap.
@@ -189,8 +210,8 @@
 								<li><b>relations</b>: relationships between nodes and/or ways</li>
 							</ul>
 						</li>
-						<li>properties: a unique Id, a list of key-value Tags, a Version, Timestamp,
-							User Id, and Changeset Id.</li>
+						<li>common properties: a unique id, a list of key-value pairs (i.e. tags), a version, timestamp,
+							user id, and changeset id</li>
 					</ul>
 				</section>
 				<section>
@@ -200,12 +221,17 @@
 								id</b>.
 						</li>
 						<li>
-							Used for points of interest and other point-shaped objects like shops, individual trees or
+							Used for <b>points of interest</b> and other point-shaped objects like shops, individual
+							trees or
 							traffic lights.
 						</li>
-						<li>example: <a href="https://www.openstreetmap.org/node/8558456772">charging station</a></li>
+						<li>
+							Also used to define <b>ways</b>
+						</li>
+						<li>example: <a href="https://www.openstreetmap.org/node/8558456772">(bicycle) charging
+								station</a></li>
 					</ul>
-					<p> <img width=300 height=300 class="r-stretch" src="img/openstreetmap/model/node.png" />
+					<p> <img width=200 height=200 class="r-stretch" src="img/openstreetmap/model/node.png" />
 					</p>
 				</section>
 				<section>
@@ -214,7 +240,7 @@
 						<li>Ordered list of nodes</b>
 						</li>
 						<li>
-							Used for linear-shaped objects like <b>roads</b> and <b>smaller rivers</b>.
+							Used for linear-shaped objects like <b>roads</b> and <b>smaller rivers</b>
 						</li>
 						<li>example: <a href="https://www.openstreetmap.org/way/24268405">residential road</a></li>
 					</ul>
@@ -227,7 +253,7 @@
 					<ul>
 						<li>
 							Ways are also used for polygon-shaped objects like <b>buildings</b> and <b>landuse areas</b>
-							when the way is closed.
+							when the way is closed
 						</li>
 						<li>example: <a href="https://www.openstreetmap.org/way/626014207">Hogent Campus Mercator,
 								Gebouw J</a></li>
@@ -240,7 +266,8 @@
 					<h3>OSM Data Model: closed ways</h3>
 					<ul>
 						<li>
-							Note that closed ways occasionally represent loops, such as roundabouts on highways or
+							Note that closed ways occasionally represent <b>loops</b>, such as roundabouts on highways
+							or
 							barrier-like structures, rather than solid areas
 						</li>
 						<li>example: <a href="https://www.openstreetmap.org/way/654593610">fence</a></li>
@@ -253,7 +280,11 @@
 					<h3>OSM Data Model: relation</h3>
 					<ul>
 						<li>
-							Describes a relationship between two or more data elements: nodes, ways or other relations:
+							Describes a <b>relationship</b> between two or more data elements: nodes, ways or other
+							relations
+						</li>
+						<li>
+							The elements of a relation are called <b>members</b>
 						</li>
 						<li>Used for “everything else”, i. e. more complex geometric objects like multipolygons and turn
 							restrictions.</li>
@@ -261,7 +292,7 @@
 								Restriction</a></li>
 					</ul>
 					<p>
-						<img width=200 height=200 class="r-stretch" src="img/openstreetmap/model/relation.svg" />
+						<img width=150 height=150 class="r-stretch" src="img/openstreetmap/model/relation.svg" />
 					</p>
 				</section>
 				<section>
@@ -278,10 +309,12 @@
 					<p>
 						<img width=200 height=200 class="r-stretch" src="img/openstreetmap/model/tag.png" />
 					</p>
-					<aside class="notes">Top-level, primary or feature tags are those that define the nature of map
-						features and
-						therefore may be the sole tags that exist on a map element. All other tags are additional
-						properties describing map features and can be considered additional or secondary tags. </aside>
+					<aside class="notes">Top-level, primary or feature tags are those that define the <b>nature</b> of
+						map
+						features and therefore may be the <b>sole</b> tags that exist on a map element. All other tags
+						are
+						additional properties describing map features and can be considered additional or secondary tags
+					</aside>
 				</section>
 				<section>
 					<h3>OSM model vs GIS “Simple Features” data model</h3>
@@ -290,7 +323,7 @@
 							Most Geographic Information Systems (GIS) operate on a <b>different</b> data model than
 							OSM</li>
 						<li>OSM data is frequently used in these systems (e.g. QGIS): crucial to convert between the
-							models.
+							models
 						</li>
 						<li>Zero-, one-, and two-dimensional objects:
 							<ul>
@@ -318,8 +351,8 @@
 					<ul>
 						<li>OSM has a completely <a href="https://wiki.openstreetmap.org/wiki/Any_tags_you_like">free
 								data model</a> (you don't need anyone's permission)</li>
-						<li>But: the community tries to moderate the list of <a
-								href="https://wiki.openstreetmap.org/wiki/Map_features">primary map features</a></li>
+						<li>But: the community tries to <b>moderate</b> the list of <a
+								href="https://wiki.openstreetmap.org/wiki/Map_features">primary map features:</a></li>
 						<ul>
 							<li>It serves as a landing page for newbies</li>
 							<li>Avoid duplicates</li>
@@ -333,10 +366,22 @@
 					<h3>Issues with the OSM data model</h3>
 					<ul>
 						<li>Varying level of detail</li>
-						<li>ID stability</li>
+						<li>ID (in)stability</li>
 						<li>Building a navigation graph</li>
 						<li>...</li>
+						<p> => <a
+								href="https://media.jochentopf.com/media/2022-08-15-study-evolution-of-the-osm-data-model.pdf">Evolution
+								of the OSM data model</a></p>
 					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Depending where you are, OSM will more or less detail: sometimes a single closed way is
+								a forest, other times every individual tree of a park is captured as a node</li>
+							<li>ID (in)stability: when a way is split (for attribution reasons), the id is reused for
+								one part, the other part receives a new id</li>
+							<li>routing graph contains: vertices (nodes) and edges (ways) but too large</li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 			<section>
@@ -365,7 +410,7 @@
 							</li>
 							<li>JOSM
 								<ul>
-									<li>advanced features: batch editing, advanced tagging option</li>
+									<li>advanced features: batch editing, advanced tagging options</li>
 									<li>customizability: plugins</li>
 									<li>offline editing</li>
 									<li>validation tools</li>
@@ -397,15 +442,26 @@
 					</ul>
 				</section>
 				<section>
-					<h3>Mapmaking: Query OSM data</h3>
-					<p>Learn how to query OSM using <a href="https://overpass-turbo.eu/">Overpass Turbo</a></p>
-					<a href="https://overpass-turbo.eu/"><img width="700" height="430" class="r-stretch"
+					<h3>Mapmaking: Query OSM data using Overpass Turbo</h3>
+					<ul>
+						<li><a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL#Filters">Filter
+								examples</a></li>
+						<li>How many <b>movie theaters</b> are there in Ghent?</li>
+					</ul>
+					<a href="https://overpass-turbo.eu/"><img width="600" height="330" class="r-stretch"
 							src="img/openstreetmap/mapmaking/overpassturbo.jpg" /></a>
+				</section>
+				<section>
+					<h3>Mapmaking: Query OSM data using Overpass Turbo</h3>
+					<p>=> According to <a href="https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcinema">OSM specs</a>,
+						can be both way nodes</p>
+					<a href="https://overpass-turbo.eu/"><img width="600" height="330" class="r-stretch"
+							src="img/openstreetmap/mapmaking/overpassturbo_solution.jpg" /></a>
 				</section>
 				<section>
 					<h3>Mapmaking: OSM data extracts</h3>
 					<ul>
-						<li><a href="https://maproulette.org/">Planet files</a>: weekly “planet” files are made
+						<li><a href="https://planet.openstreetmap.org/">Planet files</a>: weekly “planet” files are made
 							available, these are full dumps of the OSM database. </li>
 						<li>different formats: <code>xml</code> and <code>pbf</code>
 							<ul>
@@ -420,6 +476,9 @@
 							</ul>
 						</li>
 					</ul>
+					<aside class="notes">
+						https: //en.wikipedia.org/wiki/Bzip2
+					</aside>
 				</section>
 				<section>
 					<h3>Mapmaking: OSM data extracts</h3>
@@ -440,11 +499,11 @@
 							file formats</a></p>
 					<ul>
 						<li>Multiple formats to describe the differences between 2 datasets (e.g. 2 planet pbfs), most
-							common is the osmChange format, it’s a human readable (xml) </li>
+							common is the osmChange format, it’s human readable xml</li>
 						<li>These osmChange files (extension <code>.osc</code>) are published regularly (minutely,
-							hourly, daily)
+							hourly, daily), see <a href="https://wiki.openstreetmap.org/wiki/Planet.osm/diffs">here</a>
 						</li>
-						<li>Tooling is available to “apply” the changesets on top of an existing pbf, in order to obtain
+						<li><a href="https://wiki.openstreetmap.org/wiki/Osmium">Tooling</a> is available to “apply” the changesets on top of an existing pbf, in order to obtain
 							a new pbf</li>
 					</ul>
 				</section>
@@ -457,8 +516,8 @@
 						<li><b>Navigation</b>: Used by apps like <a href="https://www.mapquest.com/">MapQuest</a>, <a
 								href="https://maps.me/">Maps.me</a> and more</li>
 						<li><b>Humanitarian Aid</b>: supports disaster response and recovery efforts</li>
-						<li><b>Geospatial Analysis</b></li>
 						<li><b>Gaming</b>: e.g. Pokemon Go, MS Flight Simulator</li>
+						<li>...</li>
 					</ul>
 					<aside class="notes">
 						<ul>
@@ -472,7 +531,7 @@
 								</ul>
 							<li>Gaming:
 								<ul>
-									<li>In 2017, Niantic migrated its augmented reality titles to from Google Maps to
+									<li>In 2017, Niantic migrated its augmented reality titles from Google Maps to
 										OSM. In 2024, they moved to Overture.</li>
 									<li>Microsoft Flight Simulator: OSM buildings and roads</li>
 								</ul>
@@ -481,16 +540,39 @@
 				</section>
 			</section>
 			<section>
+				<h3>License: ODbL</h3>
+				<p>
+					<a href="https://opendatacommons.org/licenses/odbl/summary/">License Summary</a>
+				</p>
+				<img class="r-stretch" src="img/openstreetmap/history/odbl.png" />
+				<aside class="notes">
+					<p>Free to:</p>
+					<ul>
+						<li>To share: To copy, distribute and use the database.</li>
+						<li>To create: produce works from the database</li>
+						<li>To adapt: modify, transform, build upon the database</li>
+					</ul>
+					<p>As long as you:</p>
+					<ul>
+						<li>Attribute: mention the license</li>
+						<li>Share-alike: adapted version also has the same license</li>
+						<li>Keep Open: DRM may be used as long as you also share a version without such measures</li>
+					</ul>
+
+				</aside>
+			</section>
+			<section>
 				<section>
 					<h3>Community: OSM Foundation</h3>
 					<ul>
-						<li><b>goal</b>: <i>support</i> but not <i>control</i> the OpenStreetMap project</li>
-						<li>enable <i>aspects</i> in the project not easily accomplished by individual mappers: e.g.
-							manage OSM servers, funds from donors</li>
-						<li>membership
+						<li><b>goal</b>: <i>support</i> but NOT <i>control</i> OSM</li>
+						<li>enable <b>aspects</b> in the project not easily accomplished by individual mappers: e.g.
+							<b>manage OSM servers</b>, <b>funds</b> from donors
+						</li>
+						<li><b>membership</b>
 							<ul>
-								<li>membership not needed to contribute to the map!</li>
-								<li>members have voting rights in the foundation</li>
+								<li>membership <b>NOT</b> needed to contribute to OSM</li>
+								<li>members have <b>voting rights</b> in the foundation</li>
 								<li>types of members:
 									<ul>
 										<li>
@@ -513,7 +595,7 @@
 							member</li>
 						<li>there are different membership tiers (Platinum, Gold, Silver, Bronze, etc.) depending on the
 							revenue a company draws from the OSM based products. E.g. TomTom, ESRI, Meta and Microsoft
-							are all Platinum members.</li>
+							are all Platinum members</li>
 					</ul>
 				</section>
 				<section>
@@ -526,9 +608,11 @@
 						<li><b>Data Quality</b>: human mappers are better at understanding the local context</li>
 						<li><b>Licensing issues</b></li>
 						<li><b>Conflicts</b>: with contributions from other mappers</li>
-						<li><b>Community Trust</b>: automated imports can undermine this community-driven approach and
+						<li><b>Community Trust</b>: automated imports can <b>undermine</b> this community-driven
+							approach and
 							lead to
-							distrust among users.</li>
+							<b>distrust</b> among users
+						</li>
 					</ul>
 					<aside class="notes">
 						<ul>
@@ -537,56 +621,66 @@
 								representation of features.</li>
 							<li>Attribution Issues: OSM requires proper attribution for data sources. Automatically
 								importing data may not comply with licensing requirements, leading to potential legal
-								issues.</li>
+								issues</li>
 							<li>
 								Conflict Resolution: Automatic imports can overwrite existing data or create conflicts
 								with contributions from other mappers. Manual editing allows for careful resolution of
-								such conflicts.
+								such conflicts
 							</li>
 							<li>Community Trust: The OSM community relies heavily on the contributions of individual
 								mappers. Automated imports can undermine this community-driven approach and lead to
 								distrust among users.</li>
-							<li>
-								Lack of Context: Automated processes cannot capture the nuances and contextual
-								information that local mappers bring, which is essential for accurate mapping.
-
-							</li>
 						</ul>
 					</aside>
-
 				</section>
 			</section>
 			<section>
-				<h3>Exercises</h3>
+				<h3>Exercise</h3>
 				<ul>
-					<li>Query OSM data in QGIS using the <a href="https://docs.3liz.org/QuickOSM/">QuickOSM plugin</a>
+					<li>
+						Query OSM data in QGIS using the <a href="https://docs.3liz.org/QuickOSM/">QuickOSM plugin</a>
+					</li>
+					<li>
+						Can you find the movie theaters in Ghent?
 					</li>
 				</ul>
 			</section>
 			<section>
-				<h3>Kahoot Quiz</h3>
+				<h3>OpenStreetMap: Questions?</h3>
+				<img class="r-stretch" src="img/question.png" />
 			</section>
 			<section>
-				<img class="r-stretch" src="img/overture/logo.svg" />
+				<h3>Quiz</h3>
+				<img width="300" src="img/kahoot.png" />
+				<p>www.kahoot.it</p>
+			</section>
+			<section>
+				<h3>Overview</h3>
+				<ul>
+					<li>OpenStreetMap</li>
+					<li><b>Overture Maps</b></li>
+					<li>TomTom's Orbis Maps</li>
+				</ul>
+				<img class="r-stretch" src="img/overture/logo.png" />
 			</section>
 			<section>
 				<h3>What is <a href="https://overturemaps.org/">Overture?</a></h3>
 				<ul>
 					<li>Founded in 2022 by Amazon, Meta, Microsoft and TomTom as collaborative map building project</li>
 					<li>
-						To be complementary to OSM, not to replace it
+						To be <b>complementary</b> to OSM, not to replace it
 					</li>
-					<li>Makes use of OSM data, but also other datesets</li>
-					<li>Developer focused:
+					<li>Makes use of <b>OSM</b> data, but also other <b>datasets</b></li>
+					<li><b>Developer</b> focused:
 						<ul>
 							<li>
-								Standardized, well structured and documented schema
+								Standardized, well structured and documented <b>schema</b>
 							</li>
 							<li>
-								Extensive validation (QA)
+								Extensive <b>validation</b> (QA)
 							</li>
 							<li>
-								Easy to integrate and merge different datasets (conflation) using GERS
+								Easy to <b>integrate</b> and <b>merge</b> different datasets (conflation) using GERS
 							</li>
 						</ul>
 					</li>
@@ -626,11 +720,11 @@
 						<li>Wide range of <a href="https://overturemaps.org/about/members/">companies</a> is represented
 							in the foundation:
 							<ul>
-								<li>TomTom: (car) navigation</li>
-								<li>Niantic: gaming (Pokemon Go)</li>
-								<li>Uber: ride-hailing, food delivery</li>
-								<li>Addresscloud: geographic risk assessment for ensurance companies</li>
-								<li>Maxar: geospatial insights through satellite imagery</li>
+								<li><b>TomTom</b>: (car) navigation</li>
+								<li><b>Niantic</b>: gaming (Pokemon Go)</li>
+								<li><b>Uber</b>: ride-hailing, food delivery</li>
+								<li><b>Addresscloud</b>: geographic risk assessment for insurance companies</li>
+								<li><b>Maxar</b>: geospatial insights through satellite imagery</li>
 								<li>...</li>
 							</ul>
 						</li>
@@ -639,59 +733,66 @@
 				</section>
 			</section>
 			<section>
-				<h3>
-					Data is organized in Themes
-				</h3>
-				<ul>
-					<li>
-						Addresses
-					</li>
-					<li>
-						Base
-					</li>
-					<li>
-						<b>Buildings</b>
-					</li>
-					<li>
-						Divisions
-					</li>
-					<li>
-						Places
-					</li>
-					<li>
-						<b>Transportation</b>
-					</li>
-				</ul>
-				<aside class="notes">
+				<section>
+					<h3>
+						Data is organized in Themes
+					</h3>
 					<ul>
-						<li>Address Points</li>
-						<li>Base: land cover, land use, water (seas, oceans, rivers), infrastructure (comm lines,
-							piers,
-							bridges)</li>
-						<li>Building footprints</li>
-						<li>Places: Points of Interest</li>
-						<li>Administrative subdivisions: countries, regions, states, cities, etc.</li>
-						<li>Transportation: transportation network like roads, railways and ferries</li>
+						<li>
+							Addresses
+						</li>
+						<li>
+							Base
+						</li>
+						<li>
+							<b>Buildings</b>
+						</li>
+						<li>
+							Divisions
+						</li>
+						<li>
+							Places
+						</li>
+						<li>
+							<b>Transportation</b>
+						</li>
 					</ul>
-				</aside>
-			</section>
-			<section>
-				<h3>Overture Map Explorer</h3>
-				<a href="https://explore.overturemaps.org/"><img height="400" src="img/overture/explorer.png"></a>
-			</section>
-			<section>
-				<h3>Theme: Buildings</h3>
-				<p>Buildings theme prioritizes community contributed data first and then "fills in" the rest of the map
-					with the best ML data available.</p>
-				<a href="https://docs.overturemaps.org/guides/buildings/"><img height="400" class="r-stretch"
-						src="img/overture/themes/buildings/overview.png"></a>
-			</section>
-			<section>
+					<aside class="notes">
+						<ul>
+							<li>Address Points</li>
+							<li>Base: land cover, land use, water (seas, oceans, rivers), infrastructure (comm lines,
+								piers,
+								bridges)</li>
+							<li>Building footprints</li>
+							<li>Places: Points of Interest</li>
+							<li>Administrative subdivisions: countries, regions, states, cities, etc.</li>
+							<li>Transportation: transportation network like roads, railways and ferries</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Overture Map Explorer</h3>
+					<a href="https://explore.overturemaps.org/"><img height="400" src="img/overture/explorer.png"></a>
+				</section>
+				<section>
+					<h3>Theme: Buildings</h3>
+					<p>Buildings theme prioritizes:
+					<ul>
+						<li><b>community</b> contributed data first</li>
+						<li>then "fills in" the rest of the map with the best <b>ML data</b> available.</li>
+					</ul>
+					</p>
+					<a href="https://docs.overturemaps.org/guides/buildings/"><img height="300" class="r-stretch"
+							src="img/overture/themes/buildings/overview.png"></a>
+				</section>
+
 				<section>
 					<h3>Theme: Transportation Network (1)</h3>
+					<p>2 sources (currently)</p>
 					<ul>
-						<li>OSM transportation network as a base: roads, ferries and railways</li>
-						<li>enriched with road geometry coming from TomTom (55k kms currently but much more to come)
+						<li><b>OSM</b> transportation network as a base: roads, ferries and railways</li>
+						<li>enriched with road geometry coming from <b>TomTom</b> (55k kms currently but much more to
+							come)
 						</li>
 					</ul>
 					</ul>
@@ -700,11 +801,12 @@
 				</section>
 				<section>
 					<h3>Theme: Transportation Network (2)</h3>
-					<p>sectioned and merged differently (as opposed to the original OSM data) with the goal of:
+					<p><b>sectioned</b> and <b>merged</b> differently (as opposed to the original OSM data) with the
+						goal of:
 					</p>
 					<ul>
-						<li>making sure that the sectioning is consistent (according to predefined rules)</li>
-						<li>id stability of the transportation network elements is predictable and according to a
+						<li>making sure that the <b>sectioning</b> is consistent (according to predefined rules)</li>
+						<li><b>id stability</b> of the transportation network elements is predictable and according to a
 							predefined set of rules</li>
 						<li><a
 								href="https://www.tomtom.com/newsroom/behind-the-map/how-tomtom-makes-overture-transportation-layer/">blog
@@ -713,7 +815,8 @@
 					<aside class="notes">
 						<ul>
 							<li>e.g. in OSM an id of a way is reused when a way is split in 2</li>
-							<li>e.g. in OSM when attribution (speed limit) is added to a way, it possible that the way
+							<li>e.g. in OSM when attribution (speed limit) is added to a way, it possible that the
+								way
 								gets split and new ids are assigned, although the composing parts of the way still
 								represent the same road in reality</li>
 						</ul>
@@ -721,13 +824,19 @@
 				</section>
 				<section>
 					<h3>Theme: Transportation Network (3)</h3>
-					<p>sectioning the roads based on attribute changes creates an unstable map: due to a max speed
-						change the road with #4 is split into roads #5 and #6</p>
+					<p><b>OSM</b>: sectioning the roads based on <b>attribute</b> changes => creates an unstable map</p>
 					<img height="400" class="r-stretch" src="img/overture/themes/transportation/lr1.png">
+					<aside class="notes">
+						<p>due to a max speed
+							change the road with #4 is split into roads #5 and #6</p>
+					</aside>
+
 				</section>
 				<section>
 					<h3>Theme: Transportation Network (4)</h3>
-					<p>The introduction of a max speed change does not lead to ID churn. The technique to "map" certain
+					<p><b>Overture</b>: The introduction of a max speed change does not lead to ID churn. The technique
+						to "map"
+						certain
 						attributes to subsections of a certain road is called Linear Referencing (LR).</p>
 					<img height="400" class="r-stretch" src="img/overture/themes/transportation/lr2.png">
 				</section>
@@ -735,7 +844,8 @@
 					<h3>Theme: Transportation Network (5)</h3>
 					<p>Why is ID stability and consistent sectioning so important?</p>
 					<ul>
-						<li>Developer focus: with a more stable Transportation Network, your "own" dataset that refers
+						<li><b>Developer</b> focus: with a more stable Transportation Network, your "own" dataset that
+							refers
 							to the transportation elements can be re-applied more easily, when the Transportation
 							Network evolves over time.</li>
 						<li>The process of merging different map datasets (e.g. Transportation Network + Speed
@@ -743,29 +853,82 @@
 								conflation</a></li>
 					</ul>
 				</section>
+			</section>
+			<section>
 				<section>
 					<h3>How to use the Overture data?</h3>
 					<ul>
-						<li>Data is <a href="https://overturemaps.org/download/">released</a> on a monthly basis</li>
-						<li>Data can be downloaded from cloud storage, AWS or Microsoft Azure</li>
-						<li>Format: GeoParquet</li>
+						<li>Data is <a href="https://overturemaps.org/download/">released</a> on a <b>monthly</b> basis
+						</li>
+						<li><a href="https://explore.overturemaps.org/">Overture Map Explorer</a></li>
+						<li>Data can be downloaded from <b>cloud</b> storage: Amazon Web Services (AWS) or Microsoft
+							Azure</li>
+						<li>Default format: <a href="https://geoparquet.org/">GeoParquet</a>
+							<ul>
+								<li><b>Parquet</b>: column oriented, modern alternative to CSV, tailored towards fast
+									querying</li>
+								<li><b>GeoParquet</b>: support for storing geometry types</li>
+							</ul>
+						</li>
 					</ul>
 				</section>
-			</section>
-
-			<section>
-				<section></section>
-				<h3>Orbis Maps</h3>
-				<img class="r-stretch" src="img/openstreetmap/openstreetmap_logo.png" />
 				<section>
+					<h3>Demo: Downloading + displaying data in QGIS</h3>
 					<ul>
-						<li>The Overture Transportation Network maps 1-1 to the Transportation Network layer that is
-							used in the TomTom Orbis maps product</li>
+						<li>Walkthrough on <a
+								href="https://docs.overturemaps.org/examples/QGIS/">https: //docs.overturemaps.org/</a>
+						</li>
+						<li>Prerequisites: Python + QGIS</li>
 					</ul>
-
+					<img width="400" src="img/overture/data/qgis-parquet-drag-drop.gif">
 				</section>
 			</section>
-
+			<section>
+				<h3>Overview</h3>
+				<ul>
+					<li>OpenStreetMap</li>
+					<li>Overture Maps</li>
+					<li><b>TomTom's Orbis Maps</b></li>
+				</ul>
+				<p>
+					<img height=300 width=450 src="img/orbis/logo.png" />
+				</p>
+			</section>
+			<section>
+				<section>
+					<h3>Orbis Maps</h3>
+					<img class="r-stretch" src="img/orbis/orbis-layers.png" />
+					<ul>
+						<li><b>Layered</b> approach</li>
+						<li><b>Real-time</b> map: every 30 seconds a new map version is produced</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Relations between layers: child layers are informed by changes happening in TNW layer
+							</li>
+							<li><b>Overture</b>: Transportation Network Layer</li>
+							<li><b>TomTom data</b>: e.g. Traffic, Routing information like Oneways, Turn Restrictions
+							</li>
+							<li><b>OSM data</b> as a fallback</li>
+							<li><b>BYOD</b>: Bring Your Own Data</li>
+						</ul>
+				</section>
+			</section>
+			<section>
+				<h3>Orbis Maps: Customers</h3>
+				<ul>
+					<li>
+						TomTom signs <a
+							href="https://www.tomtom.com/newsroom/press-releases/general/522285435/tomtom-signs-long-term-agreement-with-microsoft-to-deliver-location-technology-and-collaborate-on-product-innovation/">long-term agreement</a> with Microsoft
+					</li>
+					<li><a href="https://www.bing.com/maps">Bing Maps</a> powered by Orbis in UK and Ireland</li>
+				</ul>
+				<img height="350" src="img/orbis/microsoft.png" />
+			</section>
+			<section>
+				<h3>Overture and Orbis: Questions?</h3>
+				<img class="r-stretch" src="img/question.png" />
+			</section>
 		</div>
 	</div>
 
@@ -775,24 +938,25 @@
 	<script src="plugin/highlight/highlight.js"></script>
 	<script>
 		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
 			slideNumber: true,
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-			parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
-
-			// Parallax background size
+	// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes
+	],
+	//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+			parallaxBackgroundImage: 'img/fluffy-clouds-blue-sky.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+	// Parallax background size
 			parallaxBackgroundSize: '2100px 1300px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
-
-			// Number of pixels to move the parallax background per slide
-			// - Calculated automatically unless specified
-			// - Set to 0 to disable movement along an axis
+	// Number of pixels to move the parallax background per slide
+	// - Calculated automatically unless specified
+	// - Set to 0 to disable movement along an axis
 			parallaxBackgroundHorizontal: 20,
 			parallaxBackgroundVertical: 5
-		});
+});
+
 	</script>
 </body>
 
